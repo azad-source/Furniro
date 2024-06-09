@@ -7,6 +7,7 @@ import svgr from "vite-plugin-svgr";
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
+    base: "/furniro/",
     plugins: [react(), viteTsconfigPaths(), svgr()],
     test: {
       globals: true,
