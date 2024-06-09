@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ProductCard from "./ProductCard";
+import ProductMock from "mock/product.mock";
 
 const meta = {
   title: "shared/CurrencyCard",
@@ -9,11 +10,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const productMock = new ProductMock();
+
 export const Primary: Story = {
   args: {
-    card: {
-      info: { a: [], b: [], c: [], h: [], l: [], o: "", p: [], t: [], v: [] },
-      name: "ETHUSD",
-    },
+    card: productMock.base(),
   },
 };
