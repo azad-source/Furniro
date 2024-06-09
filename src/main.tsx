@@ -8,6 +8,7 @@ import HomePage from "./components/routes/HomePage.tsx";
 import { RoutePath } from "domain/routPaths.ts";
 import AppRoot from "components/routes/AppRoot.tsx";
 import { ShopPage } from "components/routes/ShopPage.tsx";
+import { AboutPage } from "components/routes/AboutPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: RoutePath.shop, element: <ShopPage /> },
+      { path: RoutePath.about, element: <AboutPage /> },
     ],
   },
 ]);
