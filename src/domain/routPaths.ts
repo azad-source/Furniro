@@ -1,5 +1,5 @@
 export class RoutePath {
-  public static readonly baseUrl = "/furniro/";
+  public static readonly baseUrl = "/Furniro/";
   public static readonly shop = "/shop";
   public static readonly about = "/about";
   public static readonly contact = "/contact";
