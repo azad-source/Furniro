@@ -7,6 +7,7 @@ import ErrorPage from "./components/routes/ErrorPage.tsx";
 import HomePage from "./components/routes/HomePage.tsx";
 import { RoutePath } from "domain/routPaths.ts";
 import AppRoot from "components/routes/AppRoot.tsx";
+import { ShopPage } from "components/routes/ShopPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -14,10 +15,8 @@ const router = createBrowserRouter([
     element: <AppRoot />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: RoutePath.baseUrl,
-        element: <HomePage />,
-      },
+      { index: true, element: <HomePage /> },
+      { path: RoutePath.shop, element: <ShopPage /> },
     ],
   },
 ]);
