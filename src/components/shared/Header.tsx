@@ -86,9 +86,9 @@ interface IMenuItem {
 
 const menuItems: IMenuItem[] = [
   { link: RoutePath.baseUrl, caption: "Home" },
-  { link: RoutePath.shop, caption: "Shop" },
-  { link: RoutePath.about, caption: "About" },
-  { link: RoutePath.contact, caption: "Contact" },
+  { link: RoutePath.pages.shop, caption: "Shop" },
+  { link: RoutePath.pages.about, caption: "About" },
+  { link: RoutePath.pages.contact, caption: "Contact" },
 ];
 
 export default function Header() {

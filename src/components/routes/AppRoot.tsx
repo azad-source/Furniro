@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
 import Header from "../shared/Header";
 import Footer from "../shared/Footer";
-import styled from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import theme from "theme";
+import { MAIN_TEXT_COLOR } from "variables";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,12 +14,25 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
+const GlobalStyles = createGlobalStyle`
+  a {
+    color: ${MAIN_TEXT_COLOR.default};
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+`;
+
 export default function AppRoot() {
   return (
-    <Wrapper>
-      <Header />
-      <Outlet />
-      <Footer />
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Wrapper>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Wrapper>
+    </ThemeProvider>
   );
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeaderBg from "assets/images/header_bg.png";
+import HeaderBg from "assets/images/main_header_bg.png";
 import { Button } from "components/shared/Button/Button";
 import { MIN_CONTENT_WIDTH, SERVICE_COLOR } from "variables";
 import BrowseRangeImage1 from "assets/images/Browse_The_Range/1.png";
@@ -13,8 +13,6 @@ import ProductCard from "components/product/ProductCard/ProductCard";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const Wrapper = styled.div``;
 
 const Header = styled.div`
   width: 100%;
@@ -268,7 +266,7 @@ const settings: Settings = {
 
 export default function HomePage() {
   return (
-    <Wrapper>
+    <>
       <Header>
         <Banner>
           <BannerTitle>
@@ -347,6 +345,6 @@ export default function HomePage() {
           </SectionInner>
         </SectionWrapper>
       </Content>
-    </Wrapper>
+    </>
   );
 }

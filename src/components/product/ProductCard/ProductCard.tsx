@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "domain/routPaths";
 import { IProduct } from "models/product.models";
 import { priceFormatter } from "utils/priceFormat";
 import { Button } from "components/shared/Button/Button";
@@ -110,7 +109,7 @@ export default function ProductCard({ card }: IProps) {
   const navigate = useNavigate();
 
   const openProduct = () => {
-    navigate(RoutePath.getProductDetailsPath(card.id));
+    // navigate(RoutePath.getProductDetailsPath(card.id));
   };
 
   return (

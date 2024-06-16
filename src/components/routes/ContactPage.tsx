@@ -1,6 +1,6 @@
 import PageHeader from "components/shared/PageHeader";
 
-export const AboutPage = () => {
+export const ContactPage = () => {
   return (
     <>
       <PageHeader />

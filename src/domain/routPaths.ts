@@ -1,14 +1,31 @@
 export class RoutePath {
   public static readonly baseUrl = "/furniro/";
-  public static readonly shop = "shop";
-  public static readonly about = "about";
-  public static readonly contact = "contact";
-  public static readonly paymentOptions = "payment-options";
-  public static readonly returns = "returns";
-  public static readonly privacyPolicies = "privacy-policies";
-  public static readonly products = "products";
 
-  public static readonly getProductDetailsPath = (id: string) => {
-    return `${this.products}/${id}`;
+  public static readonly pages = {
+    shop: "shop",
+    productComparison: "product-comparison",
+    about: "about",
+    contact: "contact",
+    paymentOptions: "payment-options",
+    returns: "returns",
+    privacyPolicies: "privacy-policies",
   };
 }
+
+export type RoutePathType = keyof typeof RoutePath.pages;
+
+export const routeInfo: Record<
+  RoutePathType,
+  { title: string; crumbCaption: string }
+> = {
+  shop: { title: "Shop", crumbCaption: "Shop" },
+  productComparison: {
+    title: "Product Comparison",
+    crumbCaption: "Comparison",
+  },
+  about: { title: "About Us", crumbCaption: "About" },
+  contact: { title: "Contact", crumbCaption: "Contact" },
+  paymentOptions: { title: "Payment options", crumbCaption: "Payment options" },
+  returns: { title: "Returns", crumbCaption: "Returns" },
+  privacyPolicies: { title: "Privacy Policies", crumbCaption: "Privacy" },
+};
