@@ -23,6 +23,11 @@ import LinkedinIcon from "assets/icons/linkedin.svg?react";
 import TwitterIcon from "assets/icons/twitter.svg?react";
 import StarRating from "components/shared/StarRating/StarRating";
 import { Link } from "components/shared/Link/Link";
+import ProductMock from "mock/product.mock";
+import ProductCard from "components/product/ProductCard/ProductCard";
+
+const productMock = new ProductMock();
+const relatedProducts = productMock.list().slice(0, 3);
 
 const Content = styled.div`
   display: flex;
@@ -322,6 +327,7 @@ const SecondaryInfo = styled.div`
 
   .tabContent {
     max-width: 1026px;
+    color: ${SECONDARY_TEXT_COLOR.default};
 
     &__images {
       margin-top: 36px;
@@ -349,6 +355,30 @@ const Tabs = styled.div`
 const Tab = styled.div<{ active?: boolean }>`
   font-weight: ${(props) => (props.active ? 600 : 400)};
   cursor: pointer;
+`;
+
+const RelatedProducts = styled.div`
+  width: ${MIN_CONTENT_WIDTH};
+  padding: 55px 0;
+  border-top: 1px solid ${SECONDARY_BORDER_COLOR.default};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .title {
+    font-size: ${({ theme }) => theme.titleSmallFontSize};
+    line-height: ${({ theme }) => theme.titleSmallLineHeight};
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 26px;
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 44px;
+  }
 `;
 
 const previewImages = [
@@ -629,6 +659,17 @@ export default function ProductDetailPage() {
             </div>
           )}
         </SecondaryInfo>
+        <RelatedProducts>
+          <div className="title">Related Products</div>
+          <div className="list">
+            {relatedProducts.map((i) => {
+              return <ProductCard card={i} />;
+            })}
+          </div>
+          <Button use="transparent" width={245}>
+            Show More
+          </Button>
+        </RelatedProducts>
       </Content>
     </>
   );
