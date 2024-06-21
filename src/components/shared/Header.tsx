@@ -13,6 +13,7 @@ import SearchImage from "assets/icons/search.svg?react";
 import HeartImage from "assets/icons/heart.svg?react";
 import CartImage from "assets/icons/cart.svg?react";
 import { useEffect, useState } from "react";
+import { useAppStore } from "store";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -99,6 +100,8 @@ const menuItems: IMenuItem[] = [
 ];
 
 export default function Header() {
+  const { toggleShowMiniBasket } = useAppStore();
+
   const [hasShadow, setHasShadow] = useState(false);
 
   useEffect(() => {
@@ -144,7 +147,7 @@ export default function Header() {
               <HeartImage />
             </ActionItem>
             <ActionItem>
-              <CartImage />
+              <CartImage onClick={toggleShowMiniBasket} />
             </ActionItem>
           </UserActions>
         </Inner>

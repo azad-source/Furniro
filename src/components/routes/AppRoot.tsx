@@ -5,6 +5,8 @@ import styled, { ThemeProvider } from "styled-components";
 import theme from "theme";
 import GlobalStyles from "globalStyles";
 import ScrollToTop from "helpers/ScrollToTop";
+import { useAppStore } from "store";
+import MiniBasket from "components/basket/MiniBasket";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,6 +18,8 @@ const Wrapper = styled.div`
 `;
 
 export default function AppRoot() {
+  const { showMiniBasket } = useAppStore();
+
   return (
     <ThemeProvider theme={theme}>
       <ScrollToTop />
@@ -24,6 +28,7 @@ export default function AppRoot() {
         <Header />
         <Outlet />
         <Footer />
+        {showMiniBasket && <MiniBasket />}
       </Wrapper>
     </ThemeProvider>
   );
