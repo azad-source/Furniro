@@ -5,6 +5,8 @@ import Image2 from "assets/images/productDetail/ProdDetailImage2.png";
 import Image3 from "assets/images/productDetail/ProdDetailImage3.png";
 import Image4 from "assets/images/productDetail/ProdDetailImage4.png";
 import Image5 from "assets/images/productDetail/ProdDetailImage5.png";
+import DescriptionImage1 from "assets/images/productDetail/Description1.png";
+import DescriptionImage2 from "assets/images/productDetail/Description2.png";
 import {
   MAIN_BG_COLOR,
   MIN_CONTENT_WIDTH,
@@ -228,7 +230,7 @@ const ProductInfo = styled.div`
         box-sizing: border-box;
 
         &_active {
-          border: 1px solid ${SERVICE_COLOR.default};
+          box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
         }
 
         &_blue {
@@ -261,11 +263,18 @@ const ProductInfo = styled.div`
       border-radius: 10px;
       border: 1px solid ${SECONDARY_TEXT_COLOR.default};
       box-sizing: border-box;
+      user-select: none;
 
       &__minus,
       &__plus {
         padding: 15px;
         cursor: pointer;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 22px;
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.9);
+        }
       }
     }
 
@@ -313,6 +322,17 @@ const SecondaryInfo = styled.div`
 
   .tabContent {
     max-width: 1026px;
+
+    &__images {
+      margin-top: 36px;
+      display: flex;
+      gap: 28px;
+
+      img {
+        width: 48%;
+        display: block;
+      }
+    }
   }
 `;
 
@@ -350,6 +370,18 @@ enum TabEnum {
   Reviews = "Reviews",
 }
 
+enum SizeEnum {
+  L = "L",
+  XL = "XL",
+  XS = "XS",
+}
+
+enum ColorEnum {
+  Blue = "blue",
+  Black = "black",
+  Brown = "brown",
+}
+
 const TabCaption: Record<TabEnum, string> = {
   [TabEnum.Description]: "Description",
   [TabEnum.AdditInfo]: "Additional Information",
@@ -359,6 +391,9 @@ const TabCaption: Record<TabEnum, string> = {
 export default function ProductDetailPage() {
   const [currentPhoto, setCurrentPhoto] = useState(Image1);
   const [tab, setTab] = useState<TabEnum>(TabEnum.Description);
+  const [size, setSize] = useState<SizeEnum>(SizeEnum.L);
+  const [color, setColor] = useState<ColorEnum>(ColorEnum.Blue);
+  const [count, setCount] = useState<number>(1);
 
   const handleSwitchPhoto = (link: string) => {
     setCurrentPhoto(link);
@@ -366,6 +401,14 @@ export default function ProductDetailPage() {
 
   const isActivePhoto = (link: string) => {
     return link === currentPhoto;
+  };
+
+  const increaseCount = () => {
+    setCount((p) => p + 1);
+  };
+
+  const decreaseCount = () => {
+    setCount((p) => (p > 1 ? p - 1 : 1));
   };
 
   return (
@@ -412,24 +455,41 @@ export default function ProductDetailPage() {
             <div className="size">
               <div className="size__title">Size</div>
               <div className="size__list">
-                <div className="item item_active">L</div>
-                <div className="item">XL</div>
-                <div className="item">XS</div>
+                {Object.values(SizeEnum).map((i) => {
+                  return (
+                    <div
+                      className={`item ${size === i && "item_active"}`}
+                      onClick={() => setSize(i)}
+                    >
+                      {i}
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="color">
               <div className="color__title">Color</div>
               <div className="color__list">
-                <div className="item item_blue item_active" />
-                <div className="item item_black" />
-                <div className="item item_brown" />
+                {Object.values(ColorEnum).map((i) => {
+                  return (
+                    <div
+                      key={i}
+                      className={`item item_${i} ${color === i && "item_active"}`}
+                      onClick={() => setColor(i)}
+                    />
+                  );
+                })}
               </div>
             </div>
             <div className="actions">
               <div className="count">
-                <span className="count__minus">-</span>
-                <span className="count__value">1</span>
-                <span className="count__plus">+</span>
+                <span className="count__minus" onClick={decreaseCount}>
+                  -
+                </span>
+                <span className="count__value">{count}</span>
+                <span className="count__plus" onClick={increaseCount}>
+                  +
+                </span>
               </div>
               <Button btnSize="l" use="transparent">
                 Add To Cart
@@ -499,6 +559,10 @@ export default function ProductDetailPage() {
                 articulate and pronounced. The analogue knobs allow you to fine
                 tune the controls to your personal preferences while the
                 guitar-influenced leather strap enables easy and stylish travel.
+              </div>
+              <div className="tabContent__images">
+                <img src={DescriptionImage1} alt="" />
+                <img src={DescriptionImage2} alt="" />
               </div>
             </div>
           ) : tab === TabEnum.AdditInfo ? (
