@@ -23,6 +23,7 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-medium-image-zoom": "^5.2.4",
     "react-router-dom": "^6.23.1",
     "react-router-typesafe": "^1.5.0",
     "react-slick": "^0.30.2",
@@ -59,6 +60,7 @@
     "gh-pages": "^6.1.1",
     "jsdom": "^24.1.0",
     "storybook": "^8.1.4",
+    "storybook-addon-remix-react-router": "^3.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vitest": "^1.6.0"

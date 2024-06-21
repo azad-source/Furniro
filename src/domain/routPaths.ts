@@ -10,6 +10,12 @@ export class RoutePath {
     returns: "returns",
     privacyPolicies: "privacy-policies",
   };
+
+  public static readonly product = "shop/:productId";
+
+  public static readonly getProductDetailsPath = (id: string) => {
+    return `${this.baseUrl}${this.pages.shop}/${id}`;
+  };
 }
 
 export type RoutePathType = keyof typeof RoutePath.pages;

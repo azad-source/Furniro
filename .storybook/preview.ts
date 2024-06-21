@@ -1,4 +1,6 @@
 import type { Preview } from "@storybook/react";
+import { withRouter } from "storybook-addon-remix-react-router";
+import { StoryDecorator } from "../src/decorators/StoryDecorator";
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +11,7 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [withRouter, StoryDecorator],
 };
 
 export default preview;

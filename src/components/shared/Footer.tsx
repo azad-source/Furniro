@@ -29,6 +29,7 @@ const Inner = styled.div`
 
 const FooterContent = styled.div`
   display: flex;
+  justify-content: space-between;
 
   > *:nth-child(2) {
     width: 200px;
@@ -124,15 +125,15 @@ interface IMenuItem {
 
 const linkList: IMenuItem[] = [
   { link: RoutePath.baseUrl, caption: "Home" },
-  { link: RoutePath.shop, caption: "Shop" },
-  { link: RoutePath.about, caption: "About" },
-  { link: RoutePath.contact, caption: "Contact" },
+  { link: RoutePath.pages.shop, caption: "Shop" },
+  { link: RoutePath.pages.about, caption: "About" },
+  { link: RoutePath.pages.contact, caption: "Contact" },
 ];
 
 const helpList: IMenuItem[] = [
-  { link: RoutePath.paymentOptions, caption: "Payment Options" },
-  { link: RoutePath.returns, caption: "Returns" },
-  { link: RoutePath.privacyPolicies, caption: "Privacy Policies" },
+  { link: RoutePath.pages.paymentOptions, caption: "Payment Options" },
+  { link: RoutePath.pages.returns, caption: "Returns" },
+  { link: RoutePath.pages.privacyPolicies, caption: "Privacy Policies" },
 ];
 
 export default function Footer() {

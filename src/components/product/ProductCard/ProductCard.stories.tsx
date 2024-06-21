@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import ProductMock from "mock/product.mock";
 
 const meta = {
-  title: "shared/CurrencyCard",
+  title: "shared/ProductCard",
   component: ProductCard,
 } satisfies Meta<typeof ProductCard>;
 

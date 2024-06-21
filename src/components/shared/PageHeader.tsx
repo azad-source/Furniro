@@ -41,18 +41,11 @@ const Breadcrumbs = styled.div`
 
 export default function PageHeader({}: IProps) {
   const location = useLocation();
-
   const crumbs = getBreadCrumbs(location?.pathname);
-
   const title = crumbs[crumbs.length - 1].title;
 
-  const isFirst = (index: number) => {
-    return index === 0;
-  };
-
-  const isLast = (index: number) => {
-    return index + 1 === crumbs.length;
-  };
+  const isFirst = (index: number) => index === 0;
+  const isLast = (index: number) => index + 1 === crumbs.length;
 
   return (
     <Header>

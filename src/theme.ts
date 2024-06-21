@@ -33,7 +33,7 @@ const theme = {
   textMediumFontSize: "16px",
   textMediumLineHeight: 1.5,
   /** Text Extra Small */
-  textExtraSmallFontSize: "12px",
+  textExtraSmallFontSize: "13px",
   textExtraSmallLineHeight: 1.5,
 
   /** Font Weight */

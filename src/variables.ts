@@ -6,6 +6,9 @@ export const SERVICE_COLOR = {
   hover: "#ab8428",
   active: "#a17c24",
 };
+export const MAIN_BG_COLOR = {
+  default: "#f9f1e7",
+};
 export const MAIN_TEXT_COLOR = {
   default: "#3A3A3A",
   hover: "#111",
@@ -14,6 +17,11 @@ export const MAIN_TEXT_COLOR = {
 export const SECONDARY_TEXT_COLOR = {
   default: "#9F9F9F",
 };
+
+export const SECONDARY_BORDER_COLOR = {
+  default: "#D9D9D9",
+};
+
 export const HEADER_BG_COLOR = "#fff";
 export const FOOTER_BG_COLOR = HEADER_BG_COLOR;
 
@@ -29,7 +37,9 @@ export const BREAK_POINTS = {
 };
 export const HEADER_HEIGHT = "100px";
 export const MIN_CONTENT_WIDTH = "1236px";
+export const MIN_CONTENT_WIDTH_2 = "1334px";
 export const SIDE_PADDING = "20px";
+export const PRODUCT_CARD_WIDTH = "285px";
 
 export const device = {
   mobileS: `(min-width: ${BREAK_POINTS.mobileS})`,

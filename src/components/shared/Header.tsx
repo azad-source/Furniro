@@ -15,8 +15,20 @@ import CartImage from "assets/icons/cart.svg?react";
 import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
-  display: flex;
+  width: 100%;
   height: ${HEADER_HEIGHT};
+`;
+
+const Overlay = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: ${HEADER_HEIGHT};
+  background-color: ${HEADER_BG_COLOR};
+  z-index: 100000;
+  transition: 100ms all ease-in-out;
+  position: fixed;
+  top: 0;
 `;
 
 const Inner = styled.div`
@@ -26,11 +38,6 @@ const Inner = styled.div`
   min-width: ${BREAK_POINTS.laptopL};
   height: ${HEADER_HEIGHT};
   padding: 0 54px;
-  position: fixed;
-  top: 0;
-  z-index: 100000;
-  background-color: ${HEADER_BG_COLOR};
-  transition: 100ms all ease-in-out;
 `;
 
 const Logo = styled.a`
@@ -114,32 +121,34 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <Inner style={headerStyles}>
-        <Logo href="/">
-          <LogoImage />
-        </Logo>
-        <Menu>
-          {menuItems.map(({ link, caption }) => (
-            <MenuItem key={link}>
-              <Link to={link}>{caption}</Link>
-            </MenuItem>
-          ))}
-        </Menu>
-        <UserActions>
-          <ActionItem>
-            <AccountImage />
-          </ActionItem>
-          <ActionItem>
-            <SearchImage />
-          </ActionItem>
-          <ActionItem>
-            <HeartImage />
-          </ActionItem>
-          <ActionItem>
-            <CartImage />
-          </ActionItem>
-        </UserActions>
-      </Inner>
+      <Overlay style={headerStyles}>
+        <Inner>
+          <Logo href="/">
+            <LogoImage />
+          </Logo>
+          <Menu>
+            {menuItems.map(({ link, caption }) => (
+              <MenuItem key={link}>
+                <Link to={link}>{caption}</Link>
+              </MenuItem>
+            ))}
+          </Menu>
+          <UserActions>
+            <ActionItem>
+              <AccountImage />
+            </ActionItem>
+            <ActionItem>
+              <SearchImage />
+            </ActionItem>
+            <ActionItem>
+              <HeartImage />
+            </ActionItem>
+            <ActionItem>
+              <CartImage />
+            </ActionItem>
+          </UserActions>
+        </Inner>
+      </Overlay>
     </Wrapper>
   );
 }

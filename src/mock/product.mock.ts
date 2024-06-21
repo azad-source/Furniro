@@ -124,4 +124,8 @@ export default class ProductMock {
       this.product8(),
     ];
   }
+
+  bigList(): IProduct[] {
+    return [...this.list(), ...this.list()];
+  }
 }

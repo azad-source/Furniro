@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import HeaderBg from "assets/images/main_header_bg.png";
 import { Button } from "components/shared/Button/Button";
-import { MIN_CONTENT_WIDTH, SERVICE_COLOR } from "variables";
+import { HEADER_HEIGHT, MIN_CONTENT_WIDTH, SERVICE_COLOR } from "variables";
 import BrowseRangeImage1 from "assets/images/Browse_The_Range/1.png";
 import BrowseRangeImage2 from "assets/images/Browse_The_Range/2.png";
 import BrowseRangeImage3 from "assets/images/Browse_The_Range/3.png";
@@ -16,7 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Header = styled.div`
   width: 100%;
-  height: 40vw;
+  height: calc(100vh - ${HEADER_HEIGHT});
   background-image: url(${HeaderBg});
   background-size: cover;
   display: flex;

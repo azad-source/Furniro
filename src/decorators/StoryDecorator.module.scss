@@ -1,0 +1,22 @@
+@import 'variables';
+
+.root {
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+table[data-sid='storybook'] {
+  border-collapse: collapse;
+
+  thead {
+    background-color: #eee;
+  }
+
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 16px;
+  }
+}

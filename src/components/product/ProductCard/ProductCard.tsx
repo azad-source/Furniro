@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { RoutePath } from "domain/routPaths";
 import { IProduct } from "models/product.models";
 import { priceFormatter } from "utils/priceFormat";
 import { Button } from "components/shared/Button/Button";
 import ShareIcon from "assets/icons/share.svg?react";
 import CompareIcon from "assets/icons/compare.svg?react";
 import LikeIcon from "assets/icons/like.svg?react";
+import { PRODUCT_CARD_WIDTH } from "variables";
 
 const Wrapper = styled.div`
-  width: 285px;
+  width: ${PRODUCT_CARD_WIDTH};
   height: 446px;
   display: flex;
   flex-direction: column;
@@ -109,7 +111,7 @@ export default function ProductCard({ card }: IProps) {
   const navigate = useNavigate();
 
   const openProduct = () => {
-    // navigate(RoutePath.getProductDetailsPath(card.id));
+    navigate(RoutePath.getProductDetailsPath(card.id));
   };
 
   return (
