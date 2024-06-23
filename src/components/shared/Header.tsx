@@ -56,6 +56,7 @@ const MenuItem = styled.div`
     text-decoration: none;
     color: ${MAIN_TEXT_COLOR.default};
     font-size: 16px;
+    user-select: none;
 
     &:visited {
       color: ${MAIN_TEXT_COLOR};

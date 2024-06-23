@@ -12,6 +12,8 @@ import { AboutPage } from "components/routes/AboutPage.tsx";
 import { ProductComparisonPage } from "components/routes/ProductComparisonPage.tsx";
 import { ContactPage } from "components/routes/ContactPage.tsx";
 import ProductDetailPage from "components/routes/ProductDetailPage.tsx";
+import { CartPage } from "components/routes/CartPage.tsx";
+import { CheckoutPage } from "components/routes/CheckoutPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,8 @@ const router = createBrowserRouter([
         element: <ProductComparisonPage />,
       },
       { path: RoutePath.pages.contact, element: <ContactPage /> },
+      { path: RoutePath.pages.cart, element: <CartPage /> },
+      { path: RoutePath.pages.checkout, element: <CheckoutPage /> },
     ],
   },
 ]);

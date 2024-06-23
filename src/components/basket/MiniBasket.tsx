@@ -9,6 +9,8 @@ import { getRandomInt } from "utils/randomInteger";
 import { priceFormatter } from "utils/priceFormat";
 import { GlobalStylesForModal } from "globalStyles";
 import { Button } from "components/shared/Button/Button";
+import { useNavigate } from "react-router-dom";
+import { RoutePath } from "domain/routPaths";
 
 const productMock = new ProductMock();
 
@@ -183,6 +185,8 @@ const ButtonsWrapper = styled.div`
 `;
 
 export default function MiniBasket() {
+  const navigate = useNavigate();
+
   const { toggleShowMiniBasket } = useAppStore();
   const [basketStyles, setBasketStyles] = useState({
     cart: { right: "-100%" },
@@ -197,6 +201,11 @@ export default function MiniBasket() {
 
   const handleRemoveItem = () => {
     alert("item removed");
+  };
+
+  const openCartPage = () => {
+    toggleShowMiniBasket();
+    navigate(RoutePath.pages.cart);
   };
 
   return (
@@ -236,7 +245,7 @@ export default function MiniBasket() {
             <div className="amount">{priceFormatter.format(totalAmount)}</div>
           </Total>
           <ButtonsWrapper>
-            <Button use="transparent" btnSize="s">
+            <Button use="transparent" btnSize="s" onClick={openCartPage}>
               Cart
             </Button>
             <Button use="transparent" btnSize="s">

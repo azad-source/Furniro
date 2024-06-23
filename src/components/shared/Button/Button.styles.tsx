@@ -10,7 +10,7 @@ export const StyledButton = styled.button<IButtonProps>`
   padding: 0 20px;
   font-weight: 600;
   background-color: ${({ use }) =>
-    use === "primary" ? SERVICE_COLOR.default : "#fff"};
+    use === "primary" ? SERVICE_COLOR.default : "transparent"};
   border: ${({ use }) =>
     use === "primary" ? "none" : `1px solid ${SERVICE_COLOR.default}`};
   cursor: pointer;
