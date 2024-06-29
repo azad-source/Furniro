@@ -4,22 +4,25 @@ interface IProps {
   children: React.ReactNode;
   gap?: number;
   grow?: boolean;
+  vertical?: boolean;
+  spaceBetween?: boolean;
+  width?: string;
+  className?: string;
 }
 
-const Wrapper = styled.div<{ gap: number; vertical?: boolean; grow?: boolean }>`
-  gap: ${({ gap }) => gap + "px"};
+const Wrapper = styled.div<IProps>`
+  gap: ${({ gap }) => gap || 8 + "px"};
   flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
+  justify-content: ${({ spaceBetween }) =>
+    spaceBetween ? "space-between" : undefined};
   display: flex;
+  width: ${({ width }) => (width ? width : undefined)};
 
   > * {
     width: ${({ grow }) => (grow ? "100% !important" : undefined)};
   }
 `;
 
-export default function Gapped({ children, gap = 8, grow }: IProps) {
-  return (
-    <Wrapper gap={gap} grow={grow}>
-      {children}
-    </Wrapper>
-  );
+export default function Gapped(props: IProps) {
+  return <Wrapper {...props} />;
 }
