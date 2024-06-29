@@ -208,6 +208,11 @@ export default function MiniBasket() {
     navigate(RoutePath.pages.cart);
   };
 
+  const openCheckoutPage = () => {
+    toggleShowMiniBasket();
+    navigate(RoutePath.pages.checkout);
+  };
+
   return (
     <>
       <GlobalStylesForModal />
@@ -248,7 +253,7 @@ export default function MiniBasket() {
             <Button use="transparent" btnSize="s" onClick={openCartPage}>
               Cart
             </Button>
-            <Button use="transparent" btnSize="s">
+            <Button use="transparent" btnSize="s" onClick={openCheckoutPage}>
               Checkout
             </Button>
             <Button use="transparent" btnSize="s">

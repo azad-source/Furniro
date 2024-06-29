@@ -7,7 +7,7 @@ import {
   MIN_CONTENT_WIDTH,
   SECONDARY_TEXT_COLOR,
 } from "variables";
-import ArrowDownIcon from "assets/icons/arrow-down.svg?react";
+import ArrowDownIcon from "assets/icons/arrow-right.svg?react";
 
 interface IProps {}
 

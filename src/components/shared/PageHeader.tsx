@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HeaderBg from "assets/images/shop_header_bg.png";
-import ArrowDownIcon from "assets/icons/arrow-down.svg?react";
+import ArrowDownIcon from "assets/icons/arrow-right.svg?react";
 import LogoMiniIcon from "assets/icons/logo-mini.svg?react";
 import { Link, useLocation } from "react-router-dom";
 import React from "react";

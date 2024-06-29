@@ -24,6 +24,8 @@ export const SECONDARY_BORDER_COLOR = {
 
 export const HEADER_BG_COLOR = "#fff";
 export const FOOTER_BG_COLOR = HEADER_BG_COLOR;
+export const SHAPE_ERROR_COLOR = "#e14f48";
+export const TEXT_ERROR_COLOR = "#b3261e";
 
 // Sizes
 export const BREAK_POINTS = {
@@ -40,6 +42,7 @@ export const MIN_CONTENT_WIDTH = "1236px";
 export const MIN_CONTENT_WIDTH_2 = "1334px";
 export const SIDE_PADDING = "20px";
 export const PRODUCT_CARD_WIDTH = "285px";
+export const FIELD_ERROR_HEIGHT = "24px";
 
 export const device = {
   mobileS: `(min-width: ${BREAK_POINTS.mobileS})`,

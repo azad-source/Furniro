@@ -10,6 +10,8 @@
  * 100 - Thin
  * */
 
+import { SECONDARY_TEXT_COLOR } from "variables";
+
 const theme = {
   /** Title Large */
   titleLargeFontSize: "48px",
@@ -45,6 +47,17 @@ const theme = {
   fontWeightLight: 300,
   fontWeightExtraLight: 200,
   fontWeightThin: 100,
+
+  /** Form Field */
+  formFieldHeight: "75px",
+  formFieldTextareaHeight: "120px",
+  formFieldHorizontalPadding: "25px",
+  formFieldVerticalPadding: "25px",
+  formFieldBorderRadius: "10px",
+  formFieldBorderColor: SECONDARY_TEXT_COLOR.default,
+  formFieldBorderWidth: "1px",
+  formFieldFontWeight: 400,
+  formFieldMinWidth: "200px",
 };
 
 export default theme;
