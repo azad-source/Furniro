@@ -232,7 +232,12 @@ export const BlogPage = () => {
             />
           </div>
           <div className="sidebar">
-            <Input rightIcon={<LoupeIcon />} size="l" width={310} />
+            <Input
+              rightIcon={<LoupeIcon />}
+              size="l"
+              width={310}
+              placeholder="search"
+            />
             <div className="categories">
               <div className="categories__title">Categories</div>
               <div className="categories__list">
