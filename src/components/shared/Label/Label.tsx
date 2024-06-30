@@ -8,7 +8,7 @@ export interface ILabelProps extends React.HTMLAttributes<HTMLLabelElement> {
 export default function Label({ label, children, ...props }: ILabelProps) {
   return (
     <LabelStyled {...props}>
-      {!!label && <div>{label}</div>}
+      {!!label && <div className="label">{label}</div>}
       {children}
     </LabelStyled>
   );

@@ -1,10 +1,10 @@
+import { FieldSizeType } from "theme";
 import { StyledButton } from "./Button.styles";
 
-type ButtonSizeType = "xs" | "s" | "m" | "l" | "xl";
 type ButtonUseType = "primary" | "transparent";
 
 export interface IButtonProps extends React.HTMLProps<HTMLButtonElement> {
-  btnSize?: ButtonSizeType;
+  btnSize?: FieldSizeType;
   use?: ButtonUseType;
 }
 

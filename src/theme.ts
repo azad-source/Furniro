@@ -61,3 +61,21 @@ const theme = {
 };
 
 export default theme;
+
+export type FieldSizeType = "xs" | "s" | "m" | "l" | "xl";
+
+export function getFieldHeight(size?: FieldSizeType) {
+  switch (size) {
+    case "xl":
+      return "74px";
+    case "l":
+      return "64px";
+    case "m":
+    default:
+      return "48px";
+    case "s":
+      return "30px";
+    case "xs":
+      return "24px";
+  }
+}

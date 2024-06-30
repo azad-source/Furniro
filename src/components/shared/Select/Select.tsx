@@ -1,3 +1,4 @@
+import { FieldSizeType } from "theme";
 import Label from "../Label/Label";
 import {
   ArrowDownStyled,
@@ -17,6 +18,7 @@ export interface ISelectProps extends React.HTMLAttributes<HTMLSelectElement> {
   placeholder?: string;
   required?: boolean;
   error?: string;
+  size?: FieldSizeType;
 }
 
 export const SELECT_DISABLED = "disabled";

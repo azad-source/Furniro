@@ -7,10 +7,18 @@ export const LabelStyled = styled.label<ILabelProps>`
     width ? `${width}px` : theme.formFieldMinWidth};
   position: relative;
 
-  > :first-child {
+  .label {
     margin-bottom: 22px;
     font-size: ${({ theme }) => theme.textMediumFontSize};
     line-height: ${({ theme }) => theme.textMediumLineHeight};
     font-weight: 500;
+  }
+
+  .rightIcon {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-35%);
+    /* z-index: -1; */
   }
 `;

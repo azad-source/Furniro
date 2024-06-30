@@ -96,7 +96,7 @@ interface IMenuItem {
 const menuItems: IMenuItem[] = [
   { link: RoutePath.baseUrl, caption: "Home" },
   { link: RoutePath.pages.shop, caption: "Shop" },
-  { link: RoutePath.pages.about, caption: "About" },
+  { link: RoutePath.pages.blog, caption: "Blog" },
   { link: RoutePath.pages.contact, caption: "Contact" },
 ];
 

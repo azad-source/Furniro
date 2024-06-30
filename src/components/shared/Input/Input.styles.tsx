@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { IInputProps } from "./Input";
+import { getFieldHeight } from "theme";
 
 export const InputStyled = styled.input<IInputProps>`
   width: 100%;
-  height: ${({ theme }) => theme.formFieldHeight};
+  height: ${({ size }) => getFieldHeight(size)};
   box-sizing: border-box;
   border-style: solid;
   border-color: ${({ theme }) => theme.formFieldBorderColor};

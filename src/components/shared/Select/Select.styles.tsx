@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ISelectProps } from "./Select";
 import { FIELD_ERROR_HEIGHT, TEXT_ERROR_COLOR } from "variables";
+import { getFieldHeight } from "theme";
 
 export const SelectWrapper = styled.div`
   position: relative;
@@ -9,7 +10,7 @@ export const SelectWrapper = styled.div`
 
 export const SelectStyled = styled.select<ISelectProps>`
   width: 100%;
-  height: ${({ theme }) => theme.formFieldHeight};
+  height: ${({ size }) => getFieldHeight(size)};
   box-sizing: border-box;
   border-style: solid;
   border-color: ${({ theme }) => theme.formFieldBorderColor};
@@ -41,8 +42,8 @@ export const ArrowDownStyled = styled.div`
   display: inline-block;
   position: absolute;
   right: ${({ theme }) => theme.formFieldHorizontalPadding};
-  top: ${({ theme }) => `calc(${theme.formFieldHeight} / 2)`};
-  transform: translateY(-35%);
+  top: 50%;
+  transform: translateY(-30%);
   z-index: -1;
 `;
 

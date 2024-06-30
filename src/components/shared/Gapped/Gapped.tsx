@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const Wrapper = styled.div<IProps>`
-  gap: ${({ gap }) => gap || 8 + "px"};
+  gap: ${({ gap }) => (gap || 8) + "px"};
   flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
   justify-content: ${({ spaceBetween }) =>
     spaceBetween ? "space-between" : undefined};

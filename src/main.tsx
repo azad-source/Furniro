@@ -8,7 +8,7 @@ import HomePage from "./components/routes/HomePage.tsx";
 import { RoutePath } from "domain/routPaths.ts";
 import AppRoot from "components/routes/AppRoot.tsx";
 import { ShopPage } from "components/routes/ShopPage.tsx";
-import { AboutPage } from "components/routes/AboutPage.tsx";
+import { BlogPage } from "components/routes/BlogPage.tsx";
 import { ProductComparisonPage } from "components/routes/ProductComparisonPage.tsx";
 import { ContactPage } from "components/routes/ContactPage.tsx";
 import ProductDetailPage from "components/routes/ProductDetailPage.tsx";
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: RoutePath.pages.shop, element: <ShopPage /> },
       { path: RoutePath.product, element: <ProductDetailPage /> },
-      { path: RoutePath.pages.about, element: <AboutPage /> },
+      { path: RoutePath.pages.blog, element: <BlogPage /> },
       {
         path: RoutePath.pages.productComparison,
         element: <ProductComparisonPage />,

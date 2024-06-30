@@ -4,7 +4,7 @@ export class RoutePath {
   public static readonly pages = {
     shop: this.baseUrl + "shop",
     productComparison: this.baseUrl + "product-comparison",
-    about: this.baseUrl + "about",
+    blog: this.baseUrl + "blog",
     contact: this.baseUrl + "contact",
     paymentOptions: this.baseUrl + "payment-options",
     returns: this.baseUrl + "returns",
@@ -31,7 +31,7 @@ export const routeInfo: Record<
     title: "Product Comparison",
     crumbCaption: "Comparison",
   },
-  about: { title: "About Us", crumbCaption: "About" },
+  blog: { title: "Blog", crumbCaption: "Blog" },
   contact: { title: "Contact", crumbCaption: "Contact" },
   paymentOptions: { title: "Payment options", crumbCaption: "Payment options" },
   returns: { title: "Returns", crumbCaption: "Returns" },
